@@ -4,10 +4,10 @@
   <img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/banner.svg" alt="Nicolas Benavides — Fixoria" width="100%" />
 </a>
 
-### Administrador de Empresas · Constructor de soluciones digitales · Co-fundador de Fixoria
+### Business Administration · Digital Solutions Builder · Co-founder of Fixoria
 
-Construyo sistemas reales para empresas reales: desde diagnósticos de IA hasta ERPs industriales.<br/>
-No solo estrategia: código que funciona en producción.
+I build real systems for real businesses: from AI diagnostics to industrial ERPs.<br/>
+Not just strategy: code that runs in production.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-nicolasbenavides-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/nicolasbenavides)
 [![Fixoria](https://img.shields.io/badge/Fixoria-fixoria.com.co-172554?style=flat-square&logo=vercel&logoColor=white)](https://fixoria.com.co)
@@ -17,41 +17,41 @@ No solo estrategia: código que funciona en producción.
 
 ---
 
-## Proyectos en producción
+## Production Projects
 
-### COTA: ERP Industrial para Talleres de Mecanizado
+### COTA: Industrial ERP for Machine Shops
 
-[![Demo en vivo](https://img.shields.io/badge/Demo_en_vivo-%E2%86%92_cota--jcb.vercel.app%2Fdemo-172554?style=for-the-badge&logo=vercel&logoColor=white)](https://cota-jcb.vercel.app/demo)
+[![Live demo](https://img.shields.io/badge/Live_demo-%E2%86%92_cota--jcb.vercel.app%2Fdemo-172554?style=for-the-badge&logo=vercel&logoColor=white)](https://cota-jcb.vercel.app/demo)
 
-<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/cota-preview.jpg" alt="COTA — ERP Industrial para Talleres" width="100%" />
+<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/cota-preview.jpg" alt="COTA: Industrial ERP for Machine Shops" width="100%" />
 
-El **Taller Industrial JCB** (Popayán, Cauca) operaba con Word para cotizar, Excel para la contabilidad y WhatsApp para coordinar producción. COTA reemplazó todo eso: un sistema web mobile-first donde cada acción alimenta automáticamente al módulo siguiente, sin doble entrada de datos.
+**JCB Industrial Workshop** (Popayán, Colombia) was running on Word for quotes, Excel for accounting and WhatsApp to coordinate production. COTA replaced all of that: a mobile-first web system where each action automatically feeds the next module, with no duplicate data entry.
 
-**Flujo completo integrado:**
+**End-to-end integrated flow:**
 
 ```
-Cotización → cliente aprueba por link público → OT generada automáticamente
-→ Kanban de producción → Gantt por máquina → nómina → factura DIAN → cobro
+Quote → client approves via public link → work order auto-generated
+→ Production Kanban → Gantt by machine → payroll → DIAN invoice → collection
 ```
 
-**10 módulos en producción:**
+**10 modules in production:**
 
-| Módulo | Qué resuelve |
+| Module | What it does |
 |--------|-------------|
-| **Cotizaciones** | PDF con logo y membrete, envío automático por email, link de aprobación para el cliente. Estados: Borrador → Enviada → Aprobada → En producción → Facturada → Pagada |
-| **Producción / OTs** | Kanban visual por estado, Gantt tipo job-shop organizado por máquina (Torno CNC · Fresadora · Soldadora…), asignación de operarios y tiempos reales |
-| **Nómina** | Integrada a las horas registradas en cada orden de trabajo |
-| **Cuentas por cobrar** | Semáforo de vencimiento con filtros. Vencidas · Pendiente · Parcial · Pagadas |
-| **Contabilidad** | Flujo de caja mensual, balance general, P&L, exportación XLS lista para el contador |
-| **Inventario** | Stock mínimo con alertas automáticas |
-| **Proveedores / OC** | Órdenes de compra vinculadas al sistema |
-| **Facturación DIAN** | Integración Factus API v2, rangos de numeración, consecutivo controlado, sandbox y producción |
-| **Préstamos** | Deuda activa por entidad, cuotas pagadas vs. pendientes, barra de progreso |
-| **Presupuestos** | Planificación mensual comparada contra ejecución real |
+| **Quotes** | PDF with logo and letterhead, automated email delivery, client approval link. States: Draft → Sent → Approved → In Production → Invoiced → Paid |
+| **Production / Work Orders** | Visual Kanban by status, job-shop Gantt organized by machine (CNC Lathe · Milling · Welding...), operator assignment and actual hours tracking |
+| **Payroll** | Integrated with hours logged per work order |
+| **Accounts Receivable** | Due-date traffic light with filters. Overdue · Pending · Partial · Paid |
+| **Accounting** | Monthly cash flow, balance sheet, P&L, XLS export ready for the accountant |
+| **Inventory** | Minimum stock with automated alerts |
+| **Suppliers / POs** | Purchase orders linked to the system |
+| **DIAN Invoicing** | Factus API v2 integration (Colombian electronic invoicing), numbering ranges, controlled sequence, sandbox and production |
+| **Loans** | Active debt by lender, paid vs. pending installments, progress bar |
+| **Budgets** | Monthly planning compared against actual execution |
 
-**Arquitectura — dispatcher centralizado:**
+**Architecture: centralized dispatcher**
 
-Toda la lógica de datos fluye por un único punto: `dispatchDb()`, un `switch` con ~200 operaciones nombradas (`'cotizaciones.crear'`, `'produccion.actualizarEstado'`, `'cxc.marcarPagada'`…). Los server components lo invocan directamente; los client components hacen POST a `/api/sheets`, que delega al mismo dispatcher. Un único lugar donde vive toda la lógica de negocio: auditable, extensible, sin endpoints dispersos.
+All data logic flows through a single entry point: `dispatchDb()`, a `switch` with ~200 named operations (`'cotizaciones.crear'`, `'produccion.actualizarEstado'`, `'cxc.marcarPagada'`...). Server components call it directly; client components POST to `/api/sheets`, which delegates to the same dispatcher. One place where all business logic lives: auditable, extensible, no scattered endpoints.
 
 ```
 Server Components  →  callSheets()      →  dispatchDb()  →  Supabase
@@ -62,97 +62,97 @@ Client Components  →  POST /api/sheets  →  dispatchDb()  →  Supabase
 
 ---
 
-### Agente IA de Ventas para WhatsApp Business
+### AI Sales Agent for WhatsApp Business
 
-> Agente conversacional en producción para empresa de confección en Popayán. Funcionando 24/7 desde noviembre 2025, desplegado en VPS propio con integración directa a la API de Meta.
+> Conversational agent in production for a garment company in Popayán, Colombia. Running 24/7 since November 2025, deployed on a private VPS with direct Meta API integration.
 
-El cliente tenía un equipo comercial desbordado, inventario desactualizado y perdía clientes por respuesta lenta. El agente reemplazó esa carga operativa completamente.
+The client had an overwhelmed sales team, outdated inventory and was losing customers due to slow response times. The agent replaced that operational load entirely.
 
-**Lo que hace:**
+**What it does:**
 
-- Vende: responde consultas, cotiza y cierra pedidos por WhatsApp sin intervención humana
-- Entiende voz: transcribe notas de voz con Whisper y las procesa igual que texto
-- Identifica productos: reconoce referencias, tipos de prenda y variantes desde texto, imagen o audio
-- Asesora tallas: recomienda talla según medidas, historial de compras o descripción del cliente
-- OCR: lee fotos de catálogos, etiquetas y referencias físicas; extrae datos para procesarlos en la conversación
-- RAG: consulta una base de conocimiento del negocio (productos, precios, políticas) para respuestas precisas sin alucinar
-- Ve y edita inventario: consulta stock en tiempo real en Google Sheets y lo actualiza directamente desde la conversación
-- Avisa: notifica proactivamente: confirmaciones, estados de pedido, seguimientos automáticos
-- Dispara despacho: al cerrar una venta envía automáticamente un correo al equipo vía Resend para que preparen y despachen el pedido
-- Pausa: el equipo puede tomar el hilo manualmente en cualquier momento y devolver el control al agente
+- Sells: handles inquiries, quotes and closes orders on WhatsApp with no human involvement
+- Understands voice: transcribes voice notes with Whisper and processes them like text
+- Identifies products: recognizes references, garment types and variants from text, image or audio
+- Size advisor: recommends size based on measurements, purchase history or customer description
+- OCR: reads catalog photos, labels and physical references; extracts data to use in the conversation
+- RAG: queries a business knowledge base (products, prices, policies) for accurate answers without hallucinating
+- Tracks and edits inventory: checks real-time stock on Google Sheets and updates it directly from the conversation
+- Alerts: proactively notifies customers: order confirmations, status updates, automatic follow-ups
+- Triggers dispatch: when a sale closes, automatically emails the team via Resend to prepare and ship the order
+- Pause: the team can take over manually at any point and hand control back to the agent
 
-**Arquitectura:**
+**Architecture:**
 
 ```
-WhatsApp (cliente)
-  → Meta API  →  N8N (orquestador)
-                  ├── Whisper          (transcripción de notas de voz)
-                  ├── OCR              (lectura de imágenes y catálogos)
-                  ├── RAG              (base de conocimiento del negocio)
-                  ├── Google Sheets    (inventario y registro de ventas)
-                  ├── Resend           (email de despacho al equipo al cerrar venta)
-                  └── LLM              (razonamiento y respuesta final)
-  → WhatsApp (respuesta)
+WhatsApp (customer)
+  → Meta API  →  N8N (orchestrator)
+                  ├── Whisper          (voice note transcription)
+                  ├── OCR              (image and catalog reading)
+                  ├── RAG              (business knowledge base)
+                  ├── Google Sheets    (inventory and sales records)
+                  ├── Resend           (dispatch email to team on sale close)
+                  └── LLM              (reasoning and final response)
+  → WhatsApp (reply)
 ```
 
-Desplegado en VPS propio. En producción continua desde noviembre 2025.
+Deployed on a private VPS. Continuously running since November 2025.
 
 **Stack:** N8N · Meta API (WhatsApp Business) · Whisper · OCR · RAG · Google Sheets · Resend · VPS
 
-[![Ver caso de éxito](https://img.shields.io/badge/Caso_de_éxito-fixoria.com.co-C0392B?style=flat-square&logo=whatsapp&logoColor=white)](https://fixoria.com.co)
+[![Case study](https://img.shields.io/badge/Case_study-fixoria.com.co-C0392B?style=flat-square&logo=whatsapp&logoColor=white)](https://fixoria.com.co)
 
 ---
 
-### Diagnóstico de Madurez en IA (ML Studio)
+### AI Maturity Diagnostic (ML Studio)
 
-> Herramienta de diagnóstico estratégico para equipos de trabajo. 12 preguntas → perfil de madurez (Explorador / Operativo / Optimizador / Estratega) → plan de recomendaciones → guía interactiva personalizada.
+> Strategic diagnostic tool for work teams. 12 questions → maturity profile (Explorer / Operational / Optimizer / Strategist) → recommendations plan → personalized interactive guide.
 
 **Stack:** HTML · JavaScript · Google Apps Script · Chart.js · Vercel Serverless
 
-[![Ver herramienta](https://img.shields.io/badge/Ver_herramienta-diagnostico--fixoria.vercel.app-3535cc?style=flat-square&logo=vercel&logoColor=white)](https://diagnostico-fixoria.vercel.app)
+[![View tool](https://img.shields.io/badge/View_tool-diagnostico--fixoria.vercel.app-3535cc?style=flat-square&logo=vercel&logoColor=white)](https://diagnostico-fixoria.vercel.app)
 
-<img src="https://raw.githubusercontent.com/joanbeno/Diagnostico-IA/main/assets/facilitador-screenshot.png" alt="Dashboard Facilitador — Diagnóstico IA" width="100%" style="border-radius:8px;margin-top:8px;" />
+<img src="https://raw.githubusercontent.com/joanbeno/Diagnostico-IA/main/assets/facilitador-screenshot.png" alt="Facilitator Dashboard: AI Maturity Diagnostic" width="100%" style="border-radius:8px;margin-top:8px;" />
 
 ---
 
-### SAGEST: Diagnóstico de aprendizaje organizacional
+### SAGEST: Organizational Learning Diagnostic
 
-> Sistema de evaluación de gestión del conocimiento para equipos de restaurante. 5 dimensiones · scoring server-side · radar de brechas · guía interactiva.
+> Knowledge management assessment tool for restaurant teams. 5 dimensions · server-side scoring · gap radar · interactive guide.
 
 **Stack:** HTML · JavaScript · Google Apps Script · Chart.js · Vercel
 
-[![Ver herramienta](https://img.shields.io/badge/Ver_herramienta-sagest.vercel.app-1E72E4?style=flat-square&logo=vercel&logoColor=white)](https://sagest.vercel.app)
-[![Anexo técnico](https://img.shields.io/badge/Anexo_técnico-arquitectura_y_flujo-D4873A?style=flat-square)](https://sagest.vercel.app/arquitectura)
+[![View tool](https://img.shields.io/badge/View_tool-sagest.vercel.app-1E72E4?style=flat-square&logo=vercel&logoColor=white)](https://sagest.vercel.app)
+[![Technical annex](https://img.shields.io/badge/Technical_annex-architecture_and_flow-D4873A?style=flat-square)](https://sagest.vercel.app/arquitectura)
 
-<img src="https://raw.githubusercontent.com/joanbeno/SAGEST/main/assets/preview.svg" alt="Flujo SAGEST" width="100%" />
+<img src="https://raw.githubusercontent.com/joanbeno/SAGEST/main/assets/preview.svg" alt="SAGEST Flow" width="100%" />
 
 ---
 
-## Proyectos académicos, Universidad del Cauca
+## Academic Projects, Universidad del Cauca
 
-### Cronograma de Práctica Académica
+### Academic Internship Dashboard
 
-> Dashboard en tiempo real para seguimiento de práctica doctoral en IA para proyectos públicos. Conectado a Google Sheets, muestra progreso ponderado por fase, semana actual, diferencia vs. cronograma base y estado general.
+> Real-time dashboard for tracking a doctoral AI internship in public projects. Connected to Google Sheets, shows weighted progress by phase, current week, difference vs. baseline schedule and overall status.
 
 **Stack:** HTML · JavaScript · Google Apps Script · Google Sheets API
 
-<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/seguimiento-preview.jpg" alt="Cronograma de Práctica Académica — Dashboard en tiempo real" width="100%" style="border-radius:8px;margin-top:8px;" />
+<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/seguimiento-preview.jpg" alt="Academic Internship Dashboard: real-time progress tracking" width="100%" style="border-radius:8px;margin-top:8px;" />
 
 ---
 
-### Sistema de Seguimiento Académico (Prototipo)
+### Academic Tracking System (Prototype)
 
-> Propuesta de arquitectura para un sistema de seguimiento académico en la Unicauca. Google OAuth + Sheet Maestro + Apps Script como backend central. Incluye diagrama del sistema, hub del profesor y guía del estudiante. Costo: $0.
+> Architecture proposal for an academic tracking system at Unicauca. Google OAuth + Master Sheet + Apps Script as central backend. Includes system diagram, professor hub and student guide. Cost: $0.
 
 **Stack:** HTML · Google OAuth · Apps Script · Google Sheets
 
-[![Ver prototipo](https://img.shields.io/badge/Ver_prototipo-sistema_de_seguimiento-1E72E4?style=flat-square&logo=googlechrome&logoColor=white)](https://joanbeno.github.io/prototipo-seguimiento-/)
+[![View prototype](https://img.shields.io/badge/View_prototype-academic_tracking_system-1E72E4?style=flat-square&logo=googlechrome&logoColor=white)](https://joanbeno.github.io/prototipo-seguimiento-/)
 
-<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/prototipo-preview.jpg" alt="Sistema de Seguimiento Académico — Prototipo" width="100%" style="border-radius:8px;margin-top:8px;" />
+<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/prototipo-preview.jpg" alt="Academic Tracking System: Prototype" width="100%" style="border-radius:8px;margin-top:8px;" />
 
 ---
 
-## Stack principal
+## Tech Stack
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
@@ -172,6 +172,6 @@ Desplegado en VPS propio. En producción continua desde noviembre 2025.
 
 <div align="center">
 
-**[Fixoria](https://fixoria.com.co)** · Consultoría en IA y desarrollo de software · Popayán, Colombia
+**[Fixoria](https://fixoria.com.co)** · AI consulting and software development · Popayán, Colombia
 
 </div>
