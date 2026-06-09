@@ -71,11 +71,13 @@ El cliente tenía un equipo comercial desbordado, inventario desactualizado y pe
 **Lo que hace:**
 
 - Vende — responde consultas, cotiza y cierra pedidos por WhatsApp sin intervención humana
-- Avisa — notifica proactivamente al cliente: confirmaciones, estados de pedido, seguimientos automáticos
-- Pausa — el equipo puede pausar el agente para tomar el hilo manualmente cuando lo necesita
-- Ve inventario — consulta stock en tiempo real antes de confirmar una venta
+- Identifica productos — reconoce referencias, tipos de prenda y variantes a partir de texto o imagen enviada por el cliente
+- Asesora tallas — recomienda talla según medidas, historial de compras o descripción del cliente
+- OCR — lee fotos de catálogos, etiquetas y referencias físicas; extrae datos para procesarlos en la conversación
+- Ve inventario — consulta stock en tiempo real antes de confirmar cualquier venta
 - Edita — actualiza el inventario directamente desde la conversación
-- OCR — lee imágenes (catálogos, referencias, fotos de productos) y extrae información para procesarla
+- Avisa — notifica proactivamente: confirmaciones, estados de pedido, seguimientos automáticos
+- Pausa — el equipo puede tomar el hilo manualmente en cualquier momento y devolver el control al agente
 
 **Stack:** Node.js · Meta API (WhatsApp Business) · VPS · OCR
 
