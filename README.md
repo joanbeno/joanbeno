@@ -93,7 +93,7 @@ WhatsApp (cliente)
   → WhatsApp (respuesta)
 ```
 
-Desplegado en VPS propio. Más de un año en producción continua.
+Desplegado en VPS propio. En producción continua desde noviembre 2025.
 
 **Stack:** N8N · Meta API (WhatsApp Business) · Whisper · OCR · RAG · Google Sheets · VPS
 
