@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/banner.svg" alt="Nicolas Benavides — Fixoria" width="100%" />
 
-### Administrador de Empresas · Constructor de soluciones digitales · Fundador de Fixoria
+### Administrador de Empresas · Constructor de soluciones digitales · Co-fundador de Fixoria
 
 Construyo sistemas reales para empresas reales — desde diagnósticos de IA hasta ERPs industriales.<br/>
 No solo estrategia: código que funciona en producción.
@@ -17,13 +17,46 @@ No solo estrategia: código que funciona en producción.
 
 ## Proyectos en producción
 
-### COTA — Sistema de gestión integral para talleres industriales
+### COTA — ERP Industrial para Talleres de Mecanizado
 
-> ERP completo: cotizaciones, producción (Kanban + Gantt), contabilidad, nómina, inventario, proveedores, facturación electrónica y módulo financiero con gestión de préstamos.
+[![Demo en vivo](https://img.shields.io/badge/Demo_en_vivo-%E2%86%92_cota--jcb.vercel.app%2Fdemo-172554?style=for-the-badge&logo=vercel&logoColor=white)](https://cota-jcb.vercel.app/demo)
 
-**Stack:** Next.js 16 · React 19 · TypeScript · Supabase · NextAuth · Tailwind v4 · ExcelJS · Recharts
+<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/cota-preview.jpg" alt="COTA — ERP Industrial para Talleres" width="100%" />
 
-[![Ver demo](https://img.shields.io/badge/Ver_demo-cota--jcb.vercel.app/demo-172554?style=flat-square&logo=vercel&logoColor=white)](https://cota-jcb.vercel.app/demo)
+El **Taller Industrial JCB** (Popayán, Cauca) operaba con Word para cotizar, Excel para la contabilidad y WhatsApp para coordinar producción. COTA reemplazó todo eso: un sistema web mobile-first donde cada acción alimenta automáticamente al módulo siguiente, sin doble entrada de datos.
+
+**Flujo completo integrado:**
+
+```
+Cotización → cliente aprueba por link público → OT generada automáticamente
+→ Kanban de producción → Gantt por máquina → nómina → factura DIAN → cobro
+```
+
+**10 módulos en producción:**
+
+| Módulo | Qué resuelve |
+|--------|-------------|
+| **Cotizaciones** | PDF con logo y membrete, envío automático por email, link de aprobación para el cliente — estados: Borrador → Enviada → Aprobada → En producción → Facturada → Pagada |
+| **Producción / OTs** | Kanban visual por estado, Gantt tipo job-shop organizado por máquina (Torno CNC · Fresadora · Soldadora…), asignación de operarios y tiempos reales |
+| **Nómina** | Integrada a las horas registradas en cada orden de trabajo |
+| **Cuentas por cobrar** | Semáforo de vencimiento con filtros — Vencidas · Pendiente · Parcial · Pagadas |
+| **Contabilidad** | Flujo de caja mensual, balance general, P&L, exportación XLS lista para el contador |
+| **Inventario** | Stock mínimo con alertas automáticas |
+| **Proveedores / OC** | Órdenes de compra vinculadas al sistema |
+| **Facturación DIAN** | Integración Factus API v2, rangos de numeración, consecutivo controlado — sandbox y producción |
+| **Préstamos** | Deuda activa por entidad, cuotas pagadas vs. pendientes, barra de progreso |
+| **Presupuestos** | Planificación mensual comparada contra ejecución real |
+
+**Arquitectura — dispatcher centralizado:**
+
+Toda la lógica de datos fluye por un único punto: `dispatchDb()`, un `switch` con ~200 operaciones nombradas (`'cotizaciones.crear'`, `'produccion.actualizarEstado'`, `'cxc.marcarPagada'`…). Los server components lo invocan directamente; los client components hacen POST a `/api/sheets`, que delega al mismo dispatcher. Un único lugar donde vive toda la lógica de negocio — auditable, extensible, sin endpoints dispersos.
+
+```
+Server Components  →  callSheets()      →  dispatchDb()  →  Supabase
+Client Components  →  POST /api/sheets  →  dispatchDb()  →  Supabase
+```
+
+**Stack:** Next.js 16 · React 19 · TypeScript · Supabase (PostgreSQL) · NextAuth v5 · Tailwind v4 · Framer Motion · Recharts · ExcelJS · @react-pdf/renderer
 
 ---
 
