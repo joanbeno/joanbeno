@@ -71,15 +71,31 @@ El cliente tenía un equipo comercial desbordado, inventario desactualizado y pe
 **Lo que hace:**
 
 - Vende — responde consultas, cotiza y cierra pedidos por WhatsApp sin intervención humana
-- Identifica productos — reconoce referencias, tipos de prenda y variantes a partir de texto o imagen enviada por el cliente
+- Entiende voz — transcribe notas de voz con Whisper y las procesa igual que texto
+- Identifica productos — reconoce referencias, tipos de prenda y variantes desde texto, imagen o audio
 - Asesora tallas — recomienda talla según medidas, historial de compras o descripción del cliente
 - OCR — lee fotos de catálogos, etiquetas y referencias físicas; extrae datos para procesarlos en la conversación
-- Ve inventario — consulta stock en tiempo real antes de confirmar cualquier venta
-- Edita — actualiza el inventario directamente desde la conversación
+- RAG — consulta una base de conocimiento del negocio (productos, precios, políticas) para respuestas precisas sin alucinar
+- Ve y edita inventario — consulta stock en tiempo real en Google Sheets y lo actualiza directamente desde la conversación
 - Avisa — notifica proactivamente: confirmaciones, estados de pedido, seguimientos automáticos
 - Pausa — el equipo puede tomar el hilo manualmente en cualquier momento y devolver el control al agente
 
-**Stack:** Node.js · Meta API (WhatsApp Business) · VPS · OCR
+**Arquitectura:**
+
+```
+WhatsApp (cliente)
+  → Meta API  →  N8N (orquestador)
+                  ├── Whisper          (transcripción de notas de voz)
+                  ├── OCR              (lectura de imágenes y catálogos)
+                  ├── RAG              (base de conocimiento del negocio)
+                  ├── Google Sheets    (inventario y registro de ventas)
+                  └── LLM              (razonamiento y respuesta final)
+  → WhatsApp (respuesta)
+```
+
+Desplegado en VPS propio. Más de un año en producción continua.
+
+**Stack:** N8N · Meta API (WhatsApp Business) · Whisper · OCR · RAG · Google Sheets · VPS
 
 [![Ver caso de éxito](https://img.shields.io/badge/Caso_de_éxito-fixoria.com.co-C0392B?style=flat-square&logo=whatsapp&logoColor=white)](https://fixoria.com.co)
 
