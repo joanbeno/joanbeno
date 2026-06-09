@@ -95,6 +95,8 @@ Client Components  →  POST /api/sheets  →  dispatchDb()  →  Supabase
 
 [![Ver dashboard](https://img.shields.io/badge/Ver_dashboard-seguimiento_práctica-172554?style=flat-square&logo=googlechrome&logoColor=white)](https://joanbeno.github.io/seguimiento-practica-unicauca/)
 
+<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/seguimiento-preview.jpg" alt="Cronograma de Práctica Académica — Dashboard en tiempo real" width="100%" style="border-radius:8px;margin-top:8px;" />
+
 ---
 
 ### Sistema de Seguimiento Académico — Prototipo
@@ -104,6 +106,8 @@ Client Components  →  POST /api/sheets  →  dispatchDb()  →  Supabase
 **Stack:** HTML · Google OAuth · Apps Script · Google Sheets
 
 [![Ver prototipo](https://img.shields.io/badge/Ver_prototipo-sistema_de_seguimiento-1E72E4?style=flat-square&logo=googlechrome&logoColor=white)](https://joanbeno.github.io/prototipo-seguimiento-/)
+
+<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/prototipo-preview.jpg" alt="Sistema de Seguimiento Académico — Prototipo" width="100%" style="border-radius:8px;margin-top:8px;" />
 
 ---
 
