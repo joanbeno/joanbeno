@@ -52,6 +52,28 @@ No solo estrategia: código que funciona en producción.
 
 ---
 
+## Proyectos académicos — Universidad del Cauca
+
+### Cronograma de Práctica Académica
+
+> Dashboard en tiempo real para seguimiento de práctica doctoral en IA para proyectos públicos. Conectado a Google Sheets — muestra progreso ponderado por fase, semana actual, diferencia vs. cronograma base y estado general.
+
+**Stack:** HTML · JavaScript · Google Apps Script · Google Sheets API
+
+[![Ver dashboard](https://img.shields.io/badge/Ver_dashboard-seguimiento_práctica-172554?style=flat-square&logo=googlechrome&logoColor=white)](https://joanbeno.github.io/seguimiento-practica-unicauca/)
+
+---
+
+### Sistema de Seguimiento Académico — Prototipo
+
+> Propuesta de arquitectura para un sistema de seguimiento académico en la Unicauca. Google OAuth + Sheet Maestro + Apps Script como backend central. Incluye diagrama del sistema, hub del profesor y guía del estudiante. Costo: $0.
+
+**Stack:** HTML · Google OAuth · Apps Script · Google Sheets
+
+[![Ver prototipo](https://img.shields.io/badge/Ver_prototipo-sistema_de_seguimiento-1E72E4?style=flat-square&logo=googlechrome&logoColor=white)](https://joanbeno.github.io/prototipo-seguimiento-/)
+
+---
+
 ## Stack principal
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
