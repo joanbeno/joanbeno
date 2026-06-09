@@ -136,8 +136,6 @@ Desplegado en VPS propio. En producción continua desde noviembre 2025.
 
 **Stack:** HTML · JavaScript · Google Apps Script · Google Sheets API
 
-[![Ver dashboard](https://img.shields.io/badge/Ver_dashboard-cronograma--practicaa.vercel.app-172554?style=flat-square&logo=vercel&logoColor=white)](https://cronograma-practicaa.vercel.app/)
-
 <img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/seguimiento-preview.jpg" alt="Cronograma de Práctica Académica — Dashboard en tiempo real" width="100%" style="border-radius:8px;margin-top:8px;" />
 
 ---
