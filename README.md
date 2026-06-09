@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/banner.svg" alt="Nicolas Benavides — Fixoria" width="100%" />
+<a href="https://fixoria.com.co">
+  <img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/banner.svg" alt="Nicolas Benavides — Fixoria" width="100%" />
+</a>
 
 ### Administrador de Empresas · Constructor de soluciones digitales · Co-fundador de Fixoria
 
@@ -57,6 +59,27 @@ Client Components  →  POST /api/sheets  →  dispatchDb()  →  Supabase
 ```
 
 **Stack:** Next.js 16 · React 19 · TypeScript · Supabase (PostgreSQL) · NextAuth v5 · Tailwind v4 · Framer Motion · Recharts · ExcelJS · @react-pdf/renderer
+
+---
+
+### Agente IA de Ventas — WhatsApp Business
+
+> Agente conversacional en producción para empresa de confección en Popayán. Más de un año funcionando 24/7, desplegado en VPS propio con integración directa a la API de Meta.
+
+El cliente tenía un equipo comercial desbordado, inventario desactualizado y perdía clientes por respuesta lenta. El agente reemplazó esa carga operativa completamente.
+
+**Lo que hace:**
+
+- Vende — responde consultas, cotiza y cierra pedidos por WhatsApp sin intervención humana
+- Avisa — notifica proactivamente al cliente: confirmaciones, estados de pedido, seguimientos automáticos
+- Pausa — el equipo puede pausar el agente para tomar el hilo manualmente cuando lo necesita
+- Ve inventario — consulta stock en tiempo real antes de confirmar una venta
+- Edita — actualiza el inventario directamente desde la conversación
+- OCR — lee imágenes (catálogos, referencias, fotos de productos) y extrae información para procesarla
+
+**Stack:** Node.js · Meta API (WhatsApp Business) · VPS · OCR
+
+[![Ver caso de éxito](https://img.shields.io/badge/Caso_de_éxito-fixoria.com.co-C0392B?style=flat-square&logo=whatsapp&logoColor=white)](https://fixoria.com.co)
 
 ---
 
