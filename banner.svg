@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080810"/>
+      <stop offset="100%" style="stop-color:#0d0d20"/>
+    </linearGradient>
+    <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3535cc"/>
+      <stop offset="40%" style="stop-color:#1E72E4"/>
+      <stop offset="75%" style="stop-color:#D4873A"/>
+      <stop offset="100%" style="stop-color:#D4873A;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3535cc;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#1E72E4;stop-opacity:0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="280" fill="url(#bg)"/>
+
+  <!-- dot grid -->
+  <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.8" fill="#ffffff" opacity="0.03"/>
+  </pattern>
+  <rect width="1200" height="280" fill="url(#dots)"/>
+
+  <!-- accent line top -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#line1)"/>
+
+  <!-- decorative orb right -->
+  <circle cx="1080" cy="140" r="130" fill="url(#orb)"/>
+  <circle cx="1080" cy="140" r="90" fill="none" stroke="#3535cc" stroke-width="1" opacity="0.12"/>
+  <circle cx="1080" cy="140" r="55" fill="none" stroke="#1E72E4" stroke-width="1" opacity="0.1"/>
+  <circle cx="1080" cy="140" r="24" fill="none" stroke="#D4873A" stroke-width="1" opacity="0.2"/>
+
+  <!-- project dots on orb -->
+  <circle cx="1080" cy="50"  r="4" fill="#3535cc" opacity="0.6"/>
+  <circle cx="1163" cy="100" r="3" fill="#1E72E4" opacity="0.5"/>
+  <circle cx="1148" cy="218" r="3" fill="#D4873A" opacity="0.5"/>
+  <circle cx="1012" cy="218" r="3" fill="#D4873A" opacity="0.5"/>
+  <circle cx="997"  cy="100" r="4" fill="#3535cc" opacity="0.5"/>
+
+  <!-- name -->
+  <text x="72" y="100" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="54" font-weight="700" fill="#f0f0f8" letter-spacing="-0.025em">Nicolas Benavides</text>
+
+  <!-- role line -->
+  <text x="74" y="146" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="20" font-weight="400" fill="#8888aa" letter-spacing="0.01em">Administrador de Empresas · Fundador de Fixoria · Builder</text>
+
+  <!-- divider -->
+  <rect x="72" y="170" width="460" height="2" fill="#3535cc" opacity="0.55"/>
+
+  <!-- tagline -->
+  <text x="72" y="206" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="15" fill="#5a5a7a">Construyo sistemas reales: ERPs industriales, herramientas de diagnóstico IA,</text>
+  <text x="72" y="226" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="15" fill="#5a5a7a">automatización de procesos. Código que funciona en producción.</text>
+
+  <!-- fixoria badge -->
+  <rect x="72" y="246" width="200" height="24" rx="5" fill="#3535cc" opacity="0.12"/>
+  <rect x="72" y="246" width="200" height="24" rx="5" fill="none" stroke="#3535cc" stroke-width="1" opacity="0.4"/>
+  <text x="172" y="263" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="500" fill="#7070ee">fixoria.com.co · Popayán, Colombia</text>
+</svg>
