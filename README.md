@@ -78,6 +78,7 @@ El cliente tenía un equipo comercial desbordado, inventario desactualizado y pe
 - RAG — consulta una base de conocimiento del negocio (productos, precios, políticas) para respuestas precisas sin alucinar
 - Ve y edita inventario — consulta stock en tiempo real en Google Sheets y lo actualiza directamente desde la conversación
 - Avisa — notifica proactivamente: confirmaciones, estados de pedido, seguimientos automáticos
+- Dispara despacho — al cerrar una venta envía automáticamente un correo al equipo vía Resend para que preparen y despachen el pedido
 - Pausa — el equipo puede tomar el hilo manualmente en cualquier momento y devolver el control al agente
 
 **Arquitectura:**
@@ -89,13 +90,14 @@ WhatsApp (cliente)
                   ├── OCR              (lectura de imágenes y catálogos)
                   ├── RAG              (base de conocimiento del negocio)
                   ├── Google Sheets    (inventario y registro de ventas)
+                  ├── Resend           (email de despacho al equipo al cerrar venta)
                   └── LLM              (razonamiento y respuesta final)
   → WhatsApp (respuesta)
 ```
 
 Desplegado en VPS propio. En producción continua desde noviembre 2025.
 
-**Stack:** N8N · Meta API (WhatsApp Business) · Whisper · OCR · RAG · Google Sheets · VPS
+**Stack:** N8N · Meta API (WhatsApp Business) · Whisper · OCR · RAG · Google Sheets · Resend · VPS
 
 [![Ver caso de éxito](https://img.shields.io/badge/Caso_de_éxito-fixoria.com.co-C0392B?style=flat-square&logo=whatsapp&logoColor=white)](https://fixoria.com.co)
 
