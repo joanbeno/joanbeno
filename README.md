@@ -21,11 +21,11 @@ Not just strategy: code that runs in production.
 
 ### COTA: Industrial ERP for Machine Shops
 
-[![Live demo](https://img.shields.io/badge/Live_demo-%E2%86%92_cota--jcb.vercel.app%2Fdemo-172554?style=for-the-badge&logo=vercel&logoColor=white)](https://cota-jcb.vercel.app/demo)
+[![Live demo](https://img.shields.io/badge/Live_demo-%E2%86%92_cota--jcb.vercel.app-172554?style=for-the-badge&logo=vercel&logoColor=white)](https://cota-jcb.vercel.app/intro)
 
 <img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/assets/cota-preview.jpg" alt="COTA: Industrial ERP for Machine Shops" width="100%" />
 
-**JCB Industrial Workshop** (Popayán, Colombia) was running on Word for quotes, Excel for accounting and WhatsApp to coordinate production. COTA replaced all of that: a mobile-first web system where each action automatically feeds the next module, with no duplicate data entry.
+A machine shop was running on Word for quotes, Excel for accounting and WhatsApp to coordinate production. COTA replaced all of that: a mobile-first web system where each action automatically feeds the next module, with no duplicate data entry. Includes Ruffo, a conversational AI agent connected to the system in real time.
 
 **End-to-end integrated flow:**
 
@@ -58,7 +58,23 @@ Server Components  →  callSheets()      →  dispatchDb()  →  Supabase
 Client Components  →  POST /api/sheets  →  dispatchDb()  →  Supabase
 ```
 
-**Stack:** Next.js 16 · React 19 · TypeScript · Supabase (PostgreSQL) · NextAuth v5 · Tailwind v4 · Framer Motion · Recharts · ExcelJS · @react-pdf/renderer
+**Stack:** Next.js 16 · React 19 · TypeScript · Supabase (PostgreSQL) · NextAuth v5 · Tailwind v4 · Framer Motion · Recharts · ExcelJS · @react-pdf/renderer · Groq · Python · Telegram Bot API
+
+---
+
+### Ruffo: Multichannel AI Agent on COTA
+
+> Conversational agent connected to COTA in real time. Logs expenses from photos, checks receivables, creates quotes and manages work orders from Telegram, WhatsApp or the embedded chat in the platform. LLM-agnostic architecture: works with OpenAI GPT, Google Gemini, Anthropic Claude, Groq (Llama, Qwen) or local Ollama. The provider is chosen based on the client's budget. The integration is the same in every case.
+
+**What it does:**
+
+- Logs expenses: send a photo of a receipt and it registers the amount, vendor and category
+- Checks receivables: ask who owes what and get a live answer from the system
+- Creates quotes: dictate line items from the chat and a draft is generated in COTA
+- Controls work orders: query status, assign operators and update progress without opening the system
+- Proactive alerts: overdue invoices, urgent receivables and weekly summaries without being asked
+
+**Stack:** Python · Next.js · OpenAI GPT · Gemini Flash · Anthropic Claude · Groq (Llama · Qwen) · Telegram Bot API · WhatsApp Business API
 
 ---
 
@@ -105,9 +121,9 @@ Deployed on a private VPS. Continuously running since November 2025.
 
 ### AI Maturity Diagnostic (ML Studio)
 
-> Strategic diagnostic tool for work teams. 12 questions → maturity profile (Explorer / Operational / Optimizer / Strategist) → recommendations plan → personalized interactive guide.
+> Strategic diagnostic tool for work teams. 12 questions, maturity profile (Explorer / Operational / Optimizer / Strategist), recommendations plan and personalized interactive guide. Integrates OpenAI GPT and Google Gemini Flash to generate recommendations adapted to each profile.
 
-**Stack:** HTML · JavaScript · Google Apps Script · Chart.js · Vercel Serverless
+**Stack:** HTML · JavaScript · Google Apps Script · OpenAI API · Gemini Flash · Chart.js · Vercel Serverless
 
 [![View tool](https://img.shields.io/badge/View_tool-diagnostico--fixoria.vercel.app-3535cc?style=flat-square&logo=vercel&logoColor=white)](https://diagnostico-fixoria.vercel.app)
 
@@ -157,10 +173,15 @@ Deployed on a private VPS. Continuously running since November 2025.
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq-F55036?style=flat-square&logo=groq&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram_Bot_API-2AABEE?style=flat-square&logo=telegram&logoColor=white)
 ![PocketBase](https://img.shields.io/badge/PocketBase-B8DBE4?style=flat-square&logo=pocketbase&logoColor=black)
 ![Appwrite](https://img.shields.io/badge/Appwrite-FD366E?style=flat-square&logo=appwrite&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
