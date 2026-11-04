@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://fixoria.com.co">
-  <img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/banner.svg" alt="Nicolas Benavides — Fixoria" width="100%" />
+  <img src="https://raw.githubusercontent.com/joanbeno/joanbeno/main/banner.svg" alt="Nicolas Benavides, Fixoria" width="100%" />
 </a>
 
 ### Business Administration · Digital Solutions Builder · Co-founder of Fixoria
@@ -144,6 +144,18 @@ Deployed on a private VPS. Continuously running since November 2025.
 
 ---
 
+## Recent Work
+
+Newer systems, some of them for private clients, so not everything has a public link.
+
+**Acuni: retail management for small businesses.** Mobile-first PWA for a small shop: point of sale, FIFO stock lots, credit sales with installments, cash accounts, loans and real profit per product. Multi-tenant with row-level security in PostgreSQL. [acuni.vercel.app](https://acuni.vercel.app)
+
+**Newmi: 21-day personal change program.** Installable PWA where each participant records their own phrases and a Python and FFmpeg pipeline turns them into a personalized daily audio. Includes offline support, an admin panel and Telegram and WhatsApp bots, and it runs on self-hosted infrastructure (Hetzner, Dokploy, Traefik, Supabase).
+
+**Dynamys: training app.** PWA to learn a discipline, train and measure progress, with a large exercise catalog and animated demonstrations. Built with Vite, React and Supabase. Pre-launch.
+
+---
+
 ## Academic Projects, Universidad del Cauca
 
 ### Academic Internship Dashboard
@@ -178,6 +190,9 @@ Deployed on a private VPS. Continuously running since November 2025.
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-F55036?style=flat-square&logo=groq&logoColor=white)
@@ -187,6 +202,10 @@ Deployed on a private VPS. Continuously running since November 2025.
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)
 ![Coolify](https://img.shields.io/badge/Coolify-6C47FF?style=flat-square&logo=coolify&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Hetzner](https://img.shields.io/badge/Hetzner-D50C2D?style=flat-square&logo=hetzner&logoColor=white)
+![Dokploy](https://img.shields.io/badge/Dokploy-111111?style=flat-square)
+![FFmpeg](https://img.shields.io/badge/FFmpeg-007808?style=flat-square&logo=ffmpeg&logoColor=white)
 ![Google Apps Script](https://img.shields.io/badge/Google_Apps_Script-4285F4?style=flat-square&logo=google&logoColor=white)
 
 ---
