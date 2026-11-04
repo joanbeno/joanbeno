@@ -152,8 +152,6 @@ Newer systems, some of them for private clients, so not everything has a public 
 
 **Newmi: 21-day personal change program.** Installable PWA where each participant records their own phrases and a Python and FFmpeg pipeline turns them into a personalized daily audio. Includes offline support, an admin panel and Telegram and WhatsApp bots, and it runs on self-hosted infrastructure (Hetzner, Dokploy, Traefik, Supabase).
 
-**Dynamys: training app.** PWA to learn a discipline, train and measure progress, with a large exercise catalog and animated demonstrations. Built with Vite, React and Supabase. Pre-launch.
-
 ---
 
 ## Academic Projects, Universidad del Cauca
